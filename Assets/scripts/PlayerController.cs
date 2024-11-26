@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver) 
         { 
-            playerAudio.PlayOneShot(jumpSound,1.0);
+            playerAudio.PlayOneShot(jumpSound,1.0f);
             dirtParticle.Stop();
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
             isOnGround = false;
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            playerAudio.PlayOneShot(jumpSound,1.0);
+            playerAudio.PlayOneShot(jumpSound,1.0f);
             dirtParticle.Stop();
             explosionParticle.Play();
             gameOver = true;
